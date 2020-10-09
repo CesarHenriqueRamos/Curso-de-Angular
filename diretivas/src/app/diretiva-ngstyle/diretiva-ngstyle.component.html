@@ -1,0 +1,28 @@
+<div class="container">
+    <h5>Diretiva prop-binding</h5>
+    <button
+        [style.backgroundColor]="ativo ? 'blue': 'gray'"
+        [style.color]="ativo ? 'white': 'black'"
+        [style.fontSize]="tamanhoFonte + 'px'"
+        [style.fontWeight]="ativo ? 'bold': 'normal'"
+        (click)="onClick()"
+    >
+        Click para Mudar o Atibuto
+    </button>
+    <hr>
+    <input type="text" [(ngModel)]="tamanhoFonte">
+    <hr>
+    <h5>Diretiva ngStyle</h5>
+    <button
+        [ngStyle]="{
+        'backgroundColor' : (ativo ? 'blue': 'gray'),
+        'color' : (ativo ? 'white': 'black'),
+        'fontSize' : (tamanhoFonte + 'px'),
+        'fontWeight' : (ativo ? 'bold': 'normal')
+    }"
+        
+        (click)="onClick()"
+    >
+        Click para Mudar o Atibuto
+    </button>
+</div>
