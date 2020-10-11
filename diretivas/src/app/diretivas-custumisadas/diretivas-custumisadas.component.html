@@ -1,1 +1,13 @@
 <p HighlightMouse>Texto com highlight quando passo mouse</p>
+<p [highlight]="'red'" [defaultColor]="'grey'">Texto com rores customisadas</p>
+<hr>
+<p fundoAmarelo>Texto com fundo Amarelo</p>
+<hr>
+<h5>*ngIf</h5>
+    <div *ngIf="cursoExibir" >
+        <p>Lista de Cursos:</p>
+    </div>
+    <div *ngElse="cursoExibir" >
+        <p>Não a Cursos:</p>
+    </div>
+    <button (click)="mostrarCurso()">Mostrar Cursos</button>

@@ -1,0 +1,16 @@
+<div class="container">
+    <h5>*ngIf</h5>
+    <div *ngIf="cursos.length > 0" >
+        <p>Lista de Cursos:</p>
+    </div>
+    <div *ngIf="cursos.length == 0" >
+        <p>Não tem cursos para serem listados</p>
+    </div>
+    <h5>Utilisando hidden</h5>
+    <div [hidden]="!existeCursos" >
+        <p>Lista de Cursos:</p>
+    </div>
+    <div [hidden]="existeCursos" >
+        <p>Não tem cursos para serem listados</p>
+    </div>
+</div>
