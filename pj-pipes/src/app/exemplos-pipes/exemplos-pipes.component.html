@@ -1,0 +1,19 @@
+<div>
+    <h4>Exemplo de Pipes</h4>
+    <!--uppercase-->
+    <p>Titulo: {{ livro.title | uppercase | camelCase }}</p>
+    <!--filtro para numeros-->
+    <p>Avaliação {{ livro.rating | number:'1.1-1' }}</p>
+    <p>Numero de Paginas: {{ livro.numeroPaginas | number }}</p>
+    <p>Preço: {{ livro.preco | currency:'BRL' }}</p>
+    <!--data-->
+    <p>Data de Lançamento: {{ livro.dataLancamento | date:'dd-MM-yyyy' }}</p>
+    <br>
+    <!--json-->
+    <p>Livro: {{ livro | json }}</p>
+    <ul>
+        <li *ngFor="let liv of livros " > {{ liv }}</li>
+    </ul>
+
+    <p>{{ valorAsync |  async  }}</p>
+</div>
