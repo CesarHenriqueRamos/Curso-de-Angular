@@ -1,14 +1,15 @@
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AlunosService } from '../alunos/alunos.service';
+import { AlunosService } from '../alunos.service';
+import { FormCanDeactivate } from 'src/app/guard/form-candeactivate';
 
 @Component({
   selector: 'app-aluno-form',
   templateUrl: './aluno-form.component.html',
   styleUrls: ['./aluno-form.component.css']
 })
-export class AlunoFormComponent implements OnInit{
+export class AlunoFormComponent implements OnInit, FormCanDeactivate{
 
   aluno: any = {};
   inscricao: Subscription;

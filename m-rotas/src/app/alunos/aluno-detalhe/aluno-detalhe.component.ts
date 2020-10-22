@@ -1,7 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AlunosService } from '../alunos/alunos.service';
+import { AlunosService } from '../alunos.service';
 
 
 @Component({
