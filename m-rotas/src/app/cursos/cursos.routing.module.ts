@@ -8,11 +8,9 @@ import { CursosComponent } from './cursos.component';
 
 const routes: Routes = [
   
-  {path:'cursos', component: CursosComponent,children:[
-    {path:':id', component: CursoDetalheComponent},
-    {path:'naoEncontrado', component: CursoNaoEncontradoComponent}
-  ], canActivate:[AuthGuard]},
-  
+  {path:'cursos', component: CursosComponent, canActivate:[AuthGuard] },
+  {path:'cursos/:id', component: CursoDetalheComponent, canActivate:[AuthGuard]},
+  {path:'cursos/naoEncontrado', component: CursoNaoEncontradoComponent, canActivate:[AuthGuard]}
 ];
 //const routing: ModuleWithProviders = RouterModule.forRoot(routes);
 @NgModule({
