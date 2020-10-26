@@ -1,21 +1,66 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-    <div class="form-group">
+    <div class="form-group col-md-12">
       <label for="nome">Nome</label>
       <input type="text" class="form-control" id="nome"
        name="nome" placeholder="Nome" [(ngModel)]="usuario.nome"
        required #nome="ngModel">
-       <div class="cor-vermelha" *ngIf="nome.invalid && nome.touched" >
+        <div class="cor-vermelha" *ngIf="nome.invalid && nome.touched" >
            Nome é Obrigatorio
-       </div>
+         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group col-md-12">
       <label for="email">Email</label>
       <input type="email" class="form-control" id="email"
        name="email" placeholder="Email" [(ngModel)]="usuario.email"
        required email #email="ngModel">
-       <div class="cor-vermelha" *ngIf="email.invalid && email.touched" >
-        Email é Obrigatorio
+        <div class="cor-vermelha" *ngIf="email.invalid && email.touched" >
+         Email é Obrigatorio
+        </div>
     </div>
+<div ngModelGrup="Endereco">
+    <div class="form-group col-md-3">
+        <label for="cep">CEP</label>
+        <input type="text" class="form-control" id="cep"
+         name="cep" placeholder="CEP" ngModel required #cep="ngModel" (blur)="consutaCep($event.target.value)">
+        <div class="cor-vermelha" *ngIf="cep.invalid && cep.touched" >
+          CEP é Obrigatorio
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
-  </form>
+    <div class="form-group col-md-3">
+        <label for="numero">Numero</label>
+        <input type="text" class="form-control" id="numero"
+         name="numero" placeholder="Numero" ngModel required #numero="ngModel">
+        <div class="cor-vermelha" *ngIf="numero.invalid && numero.touched" >
+          Numero é Obrigatorio
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="complemento">Complemento</label>
+        <input type="text" class="form-control" id="complemento"
+            name="complemento" placeholder="Complemento" ngModel>        
+    </div>
+    <div class="form-group col-md-12">
+        <label for="rua">Rua</label>
+        <input type="text" class="form-control" id="rua"
+            name="rua" placeholder="Rua" ngModel readonly>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="bairro">Bairro</label>
+        <input type="text" class="form-control" id="bairro"
+            name="bairro" placeholder="bairro" ngModel readonly>
+    </div>
+    <div class="form-group col-md-4">
+        <label for="cidade">Cidade</label>
+        <input type="text" class="form-control" id="cidade"
+            name="cidade" placeholder="Cidade" ngModel readonly>
+    </div>
+    <div class="form-group col-md-2">
+        <label for="estado">Estado</label>
+        <input type="text" class="form-control" id="estado"
+            name="estado" placeholder="Estado" ngModel readonly>
+    </div>
+</div>
+    <div class="col-md-12">
+        <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+    </div>    
+</form>
