@@ -17,11 +17,11 @@
          Email é Obrigatorio
         </div>
     </div>
-<div ngModelGrup="Endereco">
+<div ngModelGrup="endereco">
     <div class="form-group col-md-3">
         <label for="cep">CEP</label>
         <input type="text" class="form-control" id="cep"
-         name="cep" placeholder="CEP" ngModel required #cep="ngModel" (blur)="consutaCep($event.target.value)">
+         name="cep" placeholder="CEP" ngModel required #cep="ngModel" (blur)="consutaCep($event.target.value, f)">
         <div class="cor-vermelha" *ngIf="cep.invalid && cep.touched" >
           CEP é Obrigatorio
         </div>
