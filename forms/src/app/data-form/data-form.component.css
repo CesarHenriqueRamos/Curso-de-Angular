@@ -10,3 +10,6 @@ button{
     font-weight: lighter;
     margin-top: 8px;
 }
+form{
+    border: none;
+}

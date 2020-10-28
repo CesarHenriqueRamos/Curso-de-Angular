@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ConsultaCepService } from '../shared/services/consulta-cep.service';
 
 
 @Component({
@@ -12,7 +13,10 @@ export class TemplateFormComponent implements OnInit {
     nome: null,
     email: null,
   }
-  constructor(private httpClient:HttpClient) { }
+  constructor(
+    private httpClient:HttpClient,
+    private cepService: ConsultaCepService
+    ) { }
 
   ngOnInit(): void {
   }

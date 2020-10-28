@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormDebugComponent } from './form-debug/form-debug.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataFormModule } from './data-form/data-form.module';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { DataFormModule } from './data-form/data-form.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    DataFormModule
+    DataFormModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
