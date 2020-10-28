@@ -1,0 +1,12 @@
+button{
+    margin-right: 10px;
+}
+.ng-invalid.ng-touched:not(form){
+    border: 1px solid red;
+}
+.cor-vermelha{
+    color: red;
+    font-size: 12px;
+    font-weight: lighter;
+    margin-top: 8px;
+}

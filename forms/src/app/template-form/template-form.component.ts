@@ -19,7 +19,7 @@ export class TemplateFormComponent implements OnInit {
   onSubmit(form){
     //console.log(form.value);
     //enviando  dados para o formulario
-    this.httpClient.post('enderecoServidor/userForm', JSON.stringify(form.value)).subscribe(dados => console.log(dados));
+    this.httpClient.post('https://httpbin.org/post', JSON.stringify(form.value)).subscribe(dados => console.log(dados));
   }
   consutaCep(cep, form){
     //limpar cep

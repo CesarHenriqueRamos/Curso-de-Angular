@@ -1,1 +1,58 @@
-<p>data-form works!</p>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" >
+    <div class="form-group col-md-12">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" id="nome"
+      formControlName="nome" placeholder="Nome">
+        <div class="cor-vermelha" *ngIf="varificaCampo('nome')" >
+           Nome é Obrigatorio
+         </div>
+    </div>
+    <div class="form-group col-md-12">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email"
+       formControlName="email" placeholder="Email">
+        <div class="cor-vermelha" *ngIf="varificaCampo('email')" >
+         Email Invalido
+        </div>
+    </div>
+<div>
+    <div class="form-group col-md-3">
+        <label for="cep">CEP</label>
+        <input type="text" class="form-control" id="cep" formControlName="cep">
+        <div class="cor-vermelha" *ngIf="varificaCampo('cep')" >
+          CEP é Obrigatorio
+        </div>
+    </div>
+    <div class="form-group col-md-3">
+        <label for="numero">Numero</label>
+        <input type="text" class="form-control" id="numero" formControlName="numero">
+        <div class="cor-vermelha" *ngIf="varificaCampo('numero')" >
+          Numero é Obrigatorio
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="complemento">Complemento</label>
+        <input type="text" class="form-control" id="complemento" formControlName="complemento">        
+    </div>
+    <div class="form-group col-md-12">
+        <label for="rua">Rua</label>
+        <input type="text" class="form-control" id="rua"  formControlName="rua" readonly>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="bairro">Bairro</label>
+        <input type="text" class="form-control" id="bairro"  formControlName="bairro" readonly>
+    </div>
+    <div class="form-group col-md-4">
+        <label for="cidade">Cidade</label>
+        <input type="text" class="form-control" id="cidade"  formControlName="cidade" readonly>
+    </div>
+    <div class="form-group col-md-2">
+        <label for="estado">Estado</label>
+        <input type="text" class="form-control" id="estado"  formControlName="estado" readonly>
+    </div>
+</div>
+    <div class="col-md-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button class="btn" (click)="clear()">cancelar</button>
+    </div>    
+</form>
