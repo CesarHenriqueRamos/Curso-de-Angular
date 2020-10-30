@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormArray, FormGroup, Validators, FormControl } from '@angular/forms';
 import { EstadosBr } from '../shared/models/estados-br.model';
 import { ConsultaCepService } from '../shared/services/consulta-cep.service';
 import { DropdownService } from '../shared/services/dropdown.service';
@@ -61,6 +61,27 @@ export class DataFormComponent implements OnInit {
       })
     }*/
   }
+  //validação checkbox
+  requireMinCheck(min=1){
+    const validator = (formArray: FormArray) =>{
+      /*const value = formArray.controls;
+      let totalChecked = 0;
+      for(let i=0; i < value.length; i++){
+        if(value[i].value){
+          totalChecked++;
+        }
+      }*/
+      //outra maneira de fazer
+      const totalChecked = formArray.controls.map(v => v.value).reduce((total,current) => current ? total + current : total ,0);
+      return totalChecked >= min ? null : { required: true };
+    }
+
+  }
+  /*buidFramkorw(){
+    const values = this.frameworks.map(v => new FormControl(false));
+    return this.formBuilder.array(values, this.requireMinCheck(1));
+  }*/
+
   clear(){
     this.formulario.reset();
   }
