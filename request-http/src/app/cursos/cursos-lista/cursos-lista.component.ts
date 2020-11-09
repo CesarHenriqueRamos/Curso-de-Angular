@@ -4,6 +4,7 @@ import { Curso } from '../curso';
 import { CursosService } from '../cursos.service';
 import { catchError } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class CursosListaComponent implements OnInit {
 constructor(
     private service: CursosService,
     private router: Router,
+    private location: Location,
     private route: ActivatedRoute
   ) { }
     
@@ -39,5 +41,21 @@ constructor(
   onEdit(id){
     console.log(id);
     this.router.navigate(['editar',id]);
+  }
+  onDelete(curso){
+    let del = confirm('Gostaria de Deletar este Registro');
+    if(del){
+      console.log('deletar');
+      this.service.delete(curso).subscribe(
+        success => {
+          location.reload()
+        },
+        error => this.alert('Erro ao Deletar'),
+        () => console.log('processo completo')
+      );
+    }
+  }
+  alert(msg){
+    alert(msg);
   }
 }

@@ -22,4 +22,10 @@ private readonly API = `${environment.API}cursos`;
   create(curso){
     return this.httpClient.post(this.API, curso).pipe(take(1));
   }
+  update(curso){
+    return this.httpClient.put(`${this.API}/${curso.id}`,curso).pipe(take(1));
+  }
+  delete(curso){
+    return this.httpClient.delete(`${this.API}/${curso.id}`,curso.id).pipe(take(1));
+  }
 }

@@ -33,21 +33,33 @@ export class CursosFormComponent implements OnInit {
    onSubmit(){
     this.submited = true;
     if(this.form.valid){
-      console.log(this.form.value);
-      this.service.create(this.form.value).subscribe(
-        success => {
-          this.alert('Cadastrado com Sucesso');
-          this.location.back();
-        },
-        error => this.alert('Erro ao Cadastrado'),
-        () => console.log('processo conpleto')
-      );
+      if(this.form.value.id){
+        //update
+        this.service.update(this.form.value).subscribe(
+          success => {
+            this.alert('Atualizado com Sucesso');
+            this.location.back();
+          },
+          error => this.alert('Erro ao Atualizar'),
+          () => console.log('processo completo')
+        );
+      }else{
+        this.service.create(this.form.value).subscribe(
+          success => {
+            this.alert('Cadastrado com Sucesso');
+            this.location.back();
+          },
+          error => this.alert('Erro ao Cadastrado'),
+          () => console.log('processo completo')
+        );
+      }
     }
   }
   onCancel(){
     this.submited = false;
     this.form.reset();
   }
+  
   alert(msg){
     alert(msg);
   }

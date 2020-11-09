@@ -2,7 +2,7 @@
   "cursos": [
     {
       "id": 1,
-      "nome": "Angular"
+      "nome": "Angular 10"
     },
     {
       "nome": "React",
@@ -17,20 +17,8 @@
       "id": 4
     },
     {
-      "nome": "Linguagem C#",
-      "id": 5
-    },
-    {
-      "nome": "Linguagem C# 2",
-      "id": 6
-    },
-    {
       "nome": "React Native",
       "id": 7
-    },
-    {
-      "nome": "Java",
-      "id": 8
     }
   ]
 }
