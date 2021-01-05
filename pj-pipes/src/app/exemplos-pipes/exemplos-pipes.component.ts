@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { rejects } from 'assert';
-import { resolve } from 'dns';
-import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-exemplos-pipes',
